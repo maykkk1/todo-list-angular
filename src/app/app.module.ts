@@ -5,7 +5,6 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { TasksComponent } from './tasks-folder/tasks/tasks.component';
 import { CompletedTasksComponent } from './completed-tasks-folder/completed-tasks/completed-tasks.component';
-import { RouterModule, Routes } from '@angular/router';
 import { HeaderComponent } from './header/header.component';
 import { TasksEditComponent } from './tasks-folder/tasks/tasks-edit/tasks-edit.component';
 import { NewTaskComponent } from './tasks-folder/tasks/new-task/new-task.component';
