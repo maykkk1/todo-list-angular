@@ -1,8 +1,8 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 import { TasksComponent } from './tasks-folder/tasks/tasks.component';
 import { CompletedTasksComponent } from './completed-tasks-folder/completed-tasks/completed-tasks.component';
 import { HeaderComponent } from './header/header.component';
@@ -29,7 +29,7 @@ import { TasksService } from './tasks.service';
     BrowserModule,
     AppRoutingModule
   ],
-  providers: [TasksService],
+  providers: [TasksService, {provide: LocationStrategy, useClass: HashLocationStrategy}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
