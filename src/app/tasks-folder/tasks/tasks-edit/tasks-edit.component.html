@@ -8,7 +8,7 @@
         <div class="row">
             <form class="form-group" style="padding: 0 30px;">
                 <label for="tarefaNomeEdit"> Nome </label>
-                <input autofocus type="text" value="{{ selectedTask.name }}" #tarefaNomeEdit class="form-control" id="tarefaNome">
+                <input autocomplete="off" type="text" value="{{ selectedTask.name }}" #tarefaNomeEdit class="form-control" id="tarefaNome">
                 <small *ngIf="emptyNameError" id="emailHelp" class="form-text text-muted"> Digite o nome da tarefa. </small><br>
                 <label for="tarefaPrioridade"> Prioridade </label>
                 <select #tarefaPrioridade value="{{ selectedTask.priority }}" style="padding-right: 10px;" class="form-control" id="tarefaPrioridade">
