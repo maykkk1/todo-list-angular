@@ -1,4 +1,5 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { Router } from '@angular/router';
 import { TasksService } from 'src/app/tasks.service';
 
 @Component({
@@ -12,7 +13,7 @@ export class NewTaskComponent implements OnInit {
   
   emptyNameError: boolean = false;
 
-  constructor(private tasksService: TasksService) { }
+  constructor(private tasksService: TasksService, private router: Router) { }
 
   ngOnInit(): void {
   }
@@ -22,7 +23,8 @@ export class NewTaskComponent implements OnInit {
     const priority = this.taskPrioridade.nativeElement.value
    if(name.length === 0) return this.emptyNameError = true;
     this.tasksService.addTarefa(name, priority)
-    return this.emptyNameError = false;
+    this.emptyNameError = false
+    return this.router.navigate(['tarefas']);
   }
 
 }

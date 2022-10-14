@@ -5,3 +5,7 @@ small, select {
 small {
     color: red;
 }
+
+.new-task {
+    min-height: 50vh;
+}
