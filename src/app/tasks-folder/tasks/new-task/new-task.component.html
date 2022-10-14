@@ -8,7 +8,7 @@
         <div class="row">
             <form class="form-group" style="padding: 0 30px;">
                 <label for="tarefaNome"> Nome </label>
-                <input type="text" #tarefaNome class="form-control" id="tarefaNome">
+                <input type="text" autofocus #tarefaNome class="form-control" id="tarefaNome">
                 <small *ngIf="emptyNameError" id="emailHelp" class="form-text text-muted"> Digite o nome da tarefa. </small><br>
                 <label for="tarefaPrioridade"> Prioridade </label>
                 <select #tarefaPrioridade style="padding-right: 10px;" class="form-control" id="tarefaPrioridade">

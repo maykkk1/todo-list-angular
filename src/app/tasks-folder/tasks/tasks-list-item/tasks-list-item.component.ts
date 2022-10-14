@@ -23,7 +23,7 @@ export class TasksListItemComponent implements OnInit {
   }
 
   onEditTask() {
-    this.router.navigate([`tarefas/editar-tarefa/${this.tarefaData.id}`])   
+    this.router.navigate([`tarefas/editar-tarefa/${this.tarefaData.id}`])
   }
 
   OnCompleteTask() {
