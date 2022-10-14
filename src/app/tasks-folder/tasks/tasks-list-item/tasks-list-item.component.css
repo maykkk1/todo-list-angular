@@ -5,4 +5,10 @@ button {
 li {
     border-color: rgb(193, 177, 177);
     box-shadow: .5px .5px 3px rgba(0, 0, 0, 0.297);
+    background-color: #413F42;
+}
+
+.col-lg-8 p {
+    overflow-wrap: break-word;
+    font-size: 15px;
 }
