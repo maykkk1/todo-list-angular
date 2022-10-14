@@ -1,0 +1,8 @@
+button {
+    margin-left: 10px;
+}
+
+li {
+    border-color: rgb(193, 177, 177);
+    box-shadow: .5px .5px 3px rgba(0, 0, 0, 0.297);
+}
