@@ -8,7 +8,7 @@ export class TasksService {
 
     initLocalstorageData() {
         if(localStorage.getItem('tasks') === null) {
-            localStorage.setItem('tasks', '[]')
+            localStorage.setItem('tasks', '[{"isComplete":false,"id":6,"name":"Tarefa com prioridade baixa","priority":"baixa"},{"isComplete":false,"id":7,"name":"Tarefa com prioridade media","priority":"media"},{"isComplete":false,"id":8,"name":"Tarefa com prioridade alta","priority":"alta"}]')
             localStorage.setItem('completeTasks', '[]')
         } else {
             this.tarefas = JSON.parse(localStorage.getItem('tasks')!)
