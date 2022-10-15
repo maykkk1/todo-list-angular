@@ -6,10 +6,6 @@ small {
     color: red;
 }
 
-.new-task {
-    min-height: 50vh;
-}
-
 h2, label {
     color: white;
 }
@@ -31,4 +27,11 @@ button {
 
 button:hover{
     color: black;
+}
+
+.btn.sair {
+    background-color: rgb(183, 166, 166);
+    margin-left: 10px;
+    padding-left: 30px !important;
+    padding-right: 30px !important;
 }

@@ -1,4 +1,4 @@
-import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { Component, ElementRef, EventEmitter, OnInit, Output, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
 import { TasksService } from 'src/app/tasks.service';
 
@@ -8,9 +8,9 @@ import { TasksService } from 'src/app/tasks.service';
   styleUrls: ['./new-task.component.css']
 })
 export class NewTaskComponent implements OnInit {
+  @Output() leaveThisScreen = new EventEmitter<void>();
   @ViewChild('tarefaNome') taskName: ElementRef;
   @ViewChild('tarefaPrioridade') taskPrioridade: ElementRef;
-  
   emptyNameError: boolean = false;
 
   constructor(private tasksService: TasksService, private router: Router) { }
@@ -24,7 +24,11 @@ export class NewTaskComponent implements OnInit {
    if(name.length === 0) return this.emptyNameError = true;
     this.tasksService.addTarefa(name, priority)
     this.emptyNameError = false
-    return this.router.navigate(['tarefas']);
+    return this.leaveThisScreen.emit();
+  }
+
+  leave() {
+    this.leaveThisScreen.emit()
   }
 
 }

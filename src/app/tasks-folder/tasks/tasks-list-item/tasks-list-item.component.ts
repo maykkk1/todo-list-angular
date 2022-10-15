@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Tarefa } from 'src/app/shared/Tarefa.model';
 import { TasksService } from 'src/app/tasks.service';
@@ -9,21 +9,20 @@ import { TasksService } from 'src/app/tasks.service';
   styleUrls: ['./tasks-list-item.component.css']
 })
 export class TasksListItemComponent implements OnInit {
-
+  @Output() taskToEdit = new EventEmitter<Tarefa>();
   @Input() tarefaData: Tarefa;
 
-  constructor(private tasksService: TasksService, private router: Router, private route: ActivatedRoute) { }
+  constructor(private tasksService: TasksService) { }
 
   ngOnInit(): void {
   }
 
   onDeleteTask() {
     this.tasksService.deleteTask(this.tarefaData.id)
-    this.router.navigate(['tarefas'])
   }
 
   onEditTask() {
-    this.router.navigate([`tarefas/editar-tarefa/${this.tarefaData.id}`])
+    this.taskToEdit.emit(this.tarefaData)
   }
 
   OnCompleteTask() {

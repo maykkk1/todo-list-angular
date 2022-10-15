@@ -1,6 +1,6 @@
 <div class="row" style="margin-bottom: 13px;">
     <div class="col-md-12">
-        <button class="btn" (click)="onCreateTask()">Nova tarefa</button>
+        <button class="btn btn-primary" (click)="createTask()">Nova tarefa</button>
     </div>
 </div>
 <div class="row">
@@ -9,6 +9,7 @@
             <app-tasks-list-item
             *ngFor="let tarefa of tarefas"
             [tarefaData]="tarefa"
+            (taskToEdit)="onEditTaskEmiter($event)"
             ></app-tasks-list-item>
         </ul>
     </div>

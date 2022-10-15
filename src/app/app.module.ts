@@ -11,6 +11,7 @@ import { NewTaskComponent } from './tasks-folder/tasks/new-task/new-task.compone
 import { TasksListComponent } from './tasks-folder/tasks/tasks-list/tasks-list.component';
 import { TasksListItemComponent } from './tasks-folder/tasks/tasks-list-item/tasks-list-item.component';
 import { TasksService } from './tasks.service';
+import { HomeComponent } from './home/home.component';
 
 
 
@@ -24,6 +25,7 @@ import { TasksService } from './tasks.service';
     NewTaskComponent,
     TasksListComponent,
     TasksListItemComponent,
+    HomeComponent,
   ],
   imports: [
     BrowserModule,

@@ -28,3 +28,10 @@ button {
 button:hover{
     color: black;
 }
+
+.btn.sair {
+    background-color: rgb(183, 166, 166);
+    margin-left: 10px;
+    padding-left: 30px !important;
+    padding-right: 30px !important;
+}

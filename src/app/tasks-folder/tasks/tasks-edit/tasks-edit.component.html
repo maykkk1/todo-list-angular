@@ -16,7 +16,10 @@
                     <option value="media"> Média </option>
                     <option value="alta"> Alta </option>
                   </select>
-                  <button  mat-raised-button type="button" class="btn btn-warning" (click)="onEditTask()"> Editar tarefa </button>
+                  <div style="margin-top: 40px;">
+                    <button  mat-raised-button type="button" class="btn btn-success" (click)="onEditTask()"> Criar nova tarefa </button>
+                    <button  mat-raised-button type="button" class="btn sair" (click)="leave()"> Sair </button>
+                  </div>
             </form>
         </div>
     </div>
