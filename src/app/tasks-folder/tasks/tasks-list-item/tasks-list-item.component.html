@@ -1,7 +1,7 @@
 <li 
 class="list-group-item" 
-style="margin-top: 5px;" 
-[ngStyle]="{'background-color': tarefaData.priority === 'baixa' ? 'rgba(0, 255, 0, 0.1)' : (tarefaData.priority === 'media' ? 'rgba(255, 255, 0, 0.1)' : 'rgba(255, 0, 0, 0.1)') }"
+style="margin-top: 10px;" 
+[ngStyle]="{'border-color': tarefaData.priority === 'baixa' ? '#04DAF6' : (tarefaData.priority === 'media' ? '#F3E600' : '#FF003C') }"
 >
     <div class="row">
         <div class="col-lg-8">
@@ -13,22 +13,22 @@ style="margin-top: 5px;"
         >
             <div class="row" align="right" style="padding-right: 10px;">
                 <button 
-                class="btn btn-success"
+                class="btn add"
                 (click)="OnCompleteTask()"
                 >
-                    <img src="../../../../assets/images/icons/complete-icon.png" width="20px">
+                    <img src="../../../../assets/images/icons/complete-icon.png" width="18px">
                 </button>
                 <button 
-                class="btn btn-danger"
+                class="btn delete"
                 (click)="onDeleteTask()"
                 >
-                    <img src="../../../../assets/images/icons/delete-icon.png" width="20px">
+                    <img src="../../../../assets/images/icons/delete-icon.png" width="18px">
                 </button>
                 <button 
-                class="btn btn-warning"
+                class="btn edit"
                 (click)="onEditTask()"
                 >
-                    <img src="../../../../assets/images/icons/edit-icon.png" width="20px">
+                    <img src="../../../../assets/images/icons/edit-icon.png" width="18px">
                 </button>
             </div>
         </div>

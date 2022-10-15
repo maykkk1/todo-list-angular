@@ -9,3 +9,26 @@ small {
 .new-task {
     min-height: 50vh;
 }
+
+h2, label {
+    color: white;
+}
+
+input, select {
+    background-color: rgb(122, 118, 118);
+    color: white;
+}
+
+input:focus, select:focus{
+    border-color:  #08FF08;
+    box-shadow: none;
+}
+
+button {
+    background-color: #08FF08;
+    color: black;
+}
+
+button:hover{
+    color: black;
+}

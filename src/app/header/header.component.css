@@ -1,0 +1,30 @@
+h1 {
+    color: white;
+}
+
+ul {
+    border-color: rgb(82, 79, 79);
+}
+
+ul li a {
+    color: whitesmoke;
+}
+
+ul li a:hover {
+    background-color: rgba(90, 87, 87, 0.213);
+    border-color: rgb(82, 79, 79);
+    border-bottom-color: #1C1C1E;
+}
+
+.active a {
+    background-color: transparent;
+    border-color: rgb(82, 79, 79);
+    border-bottom-color: #1C1C1E;
+}
+
+.active a:hover, .active a:focus {
+    background-color: rgba(90, 87, 87, 0.213);
+    border-color: rgb(82, 79, 79);
+    border-bottom-color: #1C1C1E;
+}
+

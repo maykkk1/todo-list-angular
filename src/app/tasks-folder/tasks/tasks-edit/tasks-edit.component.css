@@ -5,3 +5,26 @@ small, select {
 small {
     color: red;
 }
+
+h2, label {
+    color: white;
+}
+
+input, select {
+    background-color: rgb(122, 118, 118);
+    color: white;
+}
+
+input:focus, select:focus{
+    border-color:  #ff901f;
+    box-shadow: none;
+}
+
+button {
+    background-color: #ff901f;
+    color: black;
+}
+
+button:hover{
+    color: black;
+}
