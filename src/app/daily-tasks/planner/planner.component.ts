@@ -30,7 +30,7 @@ export class PlannerComponent implements OnInit {
 
   save() {
     this.plannerService.saveData()
-    this.dailyTasksService.updateData()
+    this.dailyTasksService.getData()
     this.router.navigate(['home'])
   }
 

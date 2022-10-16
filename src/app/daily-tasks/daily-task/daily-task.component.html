@@ -1,4 +1,8 @@
-<li class="list-group-item" style="margin-top: 10px;">
+<li 
+class="list-group-item" 
+style="margin-top: 10px;"
+[ngStyle]="{'opacity': taskData.isComplete ? '.5' : '1'}"
+>
     <div class="row">
         <div class="col-lg-10">
             <p> {{ taskData.name }} </p>
@@ -6,6 +10,7 @@
         <div class="col-lg-2">
             <button 
             class="btn add"
+            (click)="completeTask()"
             >
                 <img src="../../../../assets/images/icons/complete-icon.png" width="18px">
             </button>

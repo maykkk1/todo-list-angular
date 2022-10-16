@@ -10,7 +10,7 @@ export class DailyTasksService {
     domingo: Tarefa[] = JSON.parse(localStorage.getItem('dailyTasks')!)[6];
 
 
-    updateData() {
+    getData() {
         const tasksList = JSON.parse(localStorage.getItem('dailyTasks')!)
         this.segunda = tasksList[0]
         this.terca = tasksList[1]
@@ -39,4 +39,26 @@ export class DailyTasksService {
                 return this.terca
         }
     }
+
+    updateData() {
+        const week = [];
+        week.push(this.segunda)
+        week.push(this.terca)
+        week.push(this.quarta)
+        week.push(this.quinta)
+        week.push(this.sexta)
+        week.push(this.sabado)
+        week.push(this.domingo)
+        localStorage.setItem('dailyTasks', JSON.stringify(week))
+    }
+
+    changeTaskSituation(id: number, day: string) {
+        const today = this.getCurrentDay(day)
+        const index = today.findIndex(task => task.id === id)
+        today[index].isComplete
+        ? today[index].isComplete = false
+        : today[index].isComplete = true
+        this.updateData()
+    }
+
 }
