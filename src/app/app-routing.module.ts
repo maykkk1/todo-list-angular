@@ -3,11 +3,12 @@ import { RouterModule, Routes } from '@angular/router';
 import { CompletedTasksComponent } from './completed-tasks-folder/completed-tasks/completed-tasks.component';
 import { PlannerComponent } from './daily-tasks/planner/planner.component';
 import { HomeComponent } from './home/home.component';
-import { NewTaskComponent } from './tasks-folder/tasks/new-task/new-task.component';
-import { TasksEditComponent } from './tasks-folder/tasks/tasks-edit/tasks-edit.component';
-import { TasksComponent } from './tasks-folder/tasks/tasks.component';
 
 const appRouts: Routes = [
+  { 
+    path: '',
+    redirectTo: 'home',
+    pathMatch: 'full' },
   {
     path: 'home',
     component: HomeComponent,
