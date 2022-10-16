@@ -12,6 +12,10 @@ import { TasksListComponent } from './tasks-folder/tasks/tasks-list/tasks-list.c
 import { TasksListItemComponent } from './tasks-folder/tasks/tasks-list-item/tasks-list-item.component';
 import { TasksService } from './tasks.service';
 import { HomeComponent } from './home/home.component';
+import { DailyTasksComponent } from './daily-tasks/daily-tasks.component';
+import { PlannerComponent } from './daily-tasks/planner/planner.component';
+import { DailyTasksListComponent } from './daily-tasks/planner/daily-tasks-list/daily-tasks-list.component';
+import { DailyTasksListItemComponent } from './daily-tasks/planner/daily-tasks-list-item/daily-tasks-list-item.component';
 
 
 
@@ -26,6 +30,10 @@ import { HomeComponent } from './home/home.component';
     TasksListComponent,
     TasksListItemComponent,
     HomeComponent,
+    DailyTasksComponent,
+    PlannerComponent,
+    DailyTasksListComponent,
+    DailyTasksListItemComponent,
   ],
   imports: [
     BrowserModule,

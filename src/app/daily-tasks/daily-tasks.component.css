@@ -1,0 +1,17 @@
+h3 {
+    color: white;
+    font-size: 30px;
+    margin: 0;
+    margin-bottom: 20px;
+}
+
+.row {
+    min-height: 70vh;
+    padding: 0 15px;
+}
+
+span {
+    font-size: 18px;
+    color: white;
+    border-bottom: 1px solid #FF003C;
+}
