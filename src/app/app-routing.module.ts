@@ -9,8 +9,12 @@ import { TasksComponent } from './tasks-folder/tasks/tasks.component';
 const appRouts: Routes = [
   {
     path: 'home',
-     component: HomeComponent,
-     children: []
+    component: HomeComponent,
+    children: []
+  }, 
+  {
+    path: 'tarefas-completas',
+    component: CompletedTasksComponent
   }
 ]
 
