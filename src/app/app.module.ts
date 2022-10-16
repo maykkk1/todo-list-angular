@@ -16,6 +16,7 @@ import { DailyTasksComponent } from './daily-tasks/daily-tasks.component';
 import { PlannerComponent } from './daily-tasks/planner/planner.component';
 import { DailyTasksListComponent } from './daily-tasks/planner/daily-tasks-list/daily-tasks-list.component';
 import { DailyTasksListItemComponent } from './daily-tasks/planner/daily-tasks-list-item/daily-tasks-list-item.component';
+import { PlannerService } from './planner.service';
 
 
 
@@ -39,7 +40,7 @@ import { DailyTasksListItemComponent } from './daily-tasks/planner/daily-tasks-l
     BrowserModule,
     AppRoutingModule
   ],
-  providers: [TasksService, {provide: LocationStrategy, useClass: HashLocationStrategy}],
+  providers: [TasksService, {provide: LocationStrategy, useClass: HashLocationStrategy}, PlannerService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

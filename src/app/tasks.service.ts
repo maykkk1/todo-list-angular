@@ -1,18 +1,20 @@
 import { Tarefa } from "./shared/Tarefa.model";
 
 export class TasksService {
-    public currentIdCounter: number = 3;
+    public currentIdCounter: number[] = [];
     private tarefas: Tarefa[] =  []
 
     private tarefasCompletas: Tarefa[] = []
 
     initLocalstorageData() {
         if(localStorage.getItem('tasks') === null) {
-            localStorage.setItem('tasks', '[{"isComplete":false,"id":6,"name":"Tarefa com prioridade baixa","priority":"baixa"},{"isComplete":false,"id":7,"name":"Tarefa com prioridade media","priority":"media"},{"isComplete":false,"id":8,"name":"Tarefa com prioridade alta","priority":"alta"}]')
+            localStorage.setItem('tasks', '[]')
             localStorage.setItem('completeTasks', '[]')
+            localStorage.setItem('tasksIdCont', '[]')
         } else {
             this.tarefas = JSON.parse(localStorage.getItem('tasks')!)
             this.tarefasCompletas = JSON.parse(localStorage.getItem('completeTasks')!)
+            this.currentIdCounter = JSON.parse(localStorage.getItem('tasksIdCont')!)
         }
     }
 
@@ -25,9 +27,9 @@ export class TasksService {
     }
 
     addTarefa(name: string, priority: string) {
-        this.currentIdCounter += 1
-        const newTask = new Tarefa(this.currentIdCounter, name, priority)
+        const newTask = new Tarefa(this.currentIdCounter.length, name, priority)
         this.tarefas.push(newTask)
+        this.currentIdCounter.push(0)
         this.updateLocalstorage()
     }
 
@@ -60,6 +62,7 @@ export class TasksService {
     updateLocalstorage() {
         localStorage.setItem('tasks', JSON.stringify(this.tarefas))
         localStorage.setItem('completeTasks', JSON.stringify(this.tarefasCompletas))
+        localStorage.setItem('tasksIdCont', JSON.stringify(this.currentIdCounter))
     }
 
 }

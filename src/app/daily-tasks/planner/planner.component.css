@@ -3,10 +3,29 @@ label {
     margin: 10px 0;
 }
 
-.col-md-12, .col-md-8 {
+.col-md-12 {
     padding: 0;
 }
 
 button {
     width: 100%;
+}
+
+.cyberpunk {
+    background-color: #F3E600;
+}
+
+.criar {
+    margin-top: 10px;
+}
+
+
+@media (min-width: 995px) {
+    .col-md-8 {
+        padding: 0;
+    }
+
+    .criar {
+        margin-top: 0; 
+    }
 }

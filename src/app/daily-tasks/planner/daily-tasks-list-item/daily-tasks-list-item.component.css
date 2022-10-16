@@ -1,0 +1,28 @@
+li {
+    border-color: rgb(193, 177, 177);
+    background-color: #554B41;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom-width: .5px;
+    border-color: #04DAF6;
+    color: white;
+}
+
+li button {
+    background-color: rgb(217, 208, 208);
+    border-radius: 150px;
+    transition: 400ms;
+}
+
+.btn.add:hover {
+    background-color: #08FF08;
+}
+
+.btn.delete:hover {
+    background-color: #D2042D;
+}
+
+li p {
+    text-transform: capitalize;
+}

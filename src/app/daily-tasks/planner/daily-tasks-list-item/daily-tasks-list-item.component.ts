@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { PlannerService } from 'src/app/planner.service';
+import { Tarefa } from 'src/app/shared/Tarefa.model';
 
 @Component({
   selector: 'app-daily-tasks-list-item',
@@ -6,10 +8,16 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./daily-tasks-list-item.component.css']
 })
 export class DailyTasksListItemComponent implements OnInit {
+  @Input() taskData: Tarefa;
+  @Input() selectedDay: string;
 
-  constructor() { }
+  constructor(private plannerService: PlannerService) { }
 
   ngOnInit(): void {
+  }
+
+  delete() {
+    this.plannerService.deleteTask(this.taskData.id, this.selectedDay)
   }
 
 }

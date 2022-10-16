@@ -1,1 +1,8 @@
-<p>daily-tasks-list works!</p>
+<ul class="list-group">
+    <app-daily-tasks-list-item
+    *ngFor="let task of currentDayTasks"
+    [taskData]="task"
+    [selectedDay]="selectedDay"
+    >
+</app-daily-tasks-list-item>
+</ul>

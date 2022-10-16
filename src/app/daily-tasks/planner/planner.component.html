@@ -1,8 +1,8 @@
 <div class="row">
     <div class="col-md-6">
         <div class="col-md-12">
-            <form action="">
-                <select name="" id="" class="form-control">
+            <form style="margin-bottom: 30px;">
+                <select #current (change)="changeDay()" class="form-control">
                     <option value="segunda"> Segunda </option>
                     <option value="terca"> Terça </option>
                     <option value="quarta"> Quarta </option>
@@ -16,15 +16,23 @@
                         <label for="taskName"> Tarefa </label>
                     </div>
                     <div class="col-md-8">
-                        <input type="text" name="" id="taskName" class="form-control">
+                        <input #taskName type="text" name="" id="taskName" class="form-control">
                     </div>
                     <div class="col-md-2">
-                        <button  mat-raised-button type="button" class="btn btn-primary"> Criar </button>
+                        <button  
+                        mat-raised-button 
+                        type="button" 
+                        class="btn cyberpunk criar"
+                        (click)="addTask()"
+                        > Criar </button>
                     </div>
                 </div>
             </form>
+            <app-daily-tasks-list
+            [selectedDay]="selectedDay"
+            ></app-daily-tasks-list>
+            <button class="btn cyberpunk"> Terminar </button>
         </div>
-        <app-daily-tasks-list></app-daily-tasks-list>
     </div>
 </div>
 

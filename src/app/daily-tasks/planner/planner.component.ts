@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { PlannerService } from 'src/app/planner.service';
 
 @Component({
   selector: 'app-planner',
@@ -6,10 +7,21 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./planner.component.css']
 })
 export class PlannerComponent implements OnInit {
-
-  constructor() { }
+  @ViewChild('current') currentDay: ElementRef;
+  @ViewChild('taskName') taskName: ElementRef;
+  selectedDay: string = 'segunda';
+  
+  constructor(private plannerService: PlannerService) { }
 
   ngOnInit(): void {
+  }
+
+  changeDay() {
+    this.selectedDay = this.currentDay.nativeElement.value;
+  }
+
+  addTask() {
+    this.plannerService.addTask(this.selectedDay, this.taskName.nativeElement.value)
   }
 
 }
