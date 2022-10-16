@@ -11,6 +11,7 @@ export class TasksService {
             localStorage.setItem('tasks', '[]')
             localStorage.setItem('completeTasks', '[]')
             localStorage.setItem('tasksIdCont', '[]')
+            localStorage.setItem('dailyTasks', '[]')
         } else {
             this.tarefas = JSON.parse(localStorage.getItem('tasks')!)
             this.tarefasCompletas = JSON.parse(localStorage.getItem('completeTasks')!)

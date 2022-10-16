@@ -1,4 +1,6 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { Router } from '@angular/router';
+import { DailyTasksService } from 'src/app/daily-tasks.service';
 import { PlannerService } from 'src/app/planner.service';
 
 @Component({
@@ -11,7 +13,9 @@ export class PlannerComponent implements OnInit {
   @ViewChild('taskName') taskName: ElementRef;
   selectedDay: string = 'segunda';
   
-  constructor(private plannerService: PlannerService) { }
+  constructor(private plannerService: PlannerService, 
+              private dailyTasksService: DailyTasksService,
+              private router: Router) { }
 
   ngOnInit(): void {
   }
@@ -22,6 +26,12 @@ export class PlannerComponent implements OnInit {
 
   addTask() {
     this.plannerService.addTask(this.selectedDay, this.taskName.nativeElement.value)
+  }
+
+  save() {
+    this.plannerService.saveData()
+    this.dailyTasksService.updateData()
+    this.router.navigate(['home'])
   }
 
 }

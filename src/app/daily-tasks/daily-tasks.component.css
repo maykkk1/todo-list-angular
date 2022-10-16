@@ -2,16 +2,19 @@ h3 {
     color: white;
     font-size: 30px;
     margin: 0;
-    margin-bottom: px;
+    margin-bottom: 15px;
 }
 
 .row {
-    min-height: 70vh;
     padding: 0 15px;
 }
 
 span {
     font-size: 18px;
     color: white;
-    border-bottom: 1px solid #FF003C;
+    border-bottom: 1px solid #F3E600;
+}
+
+ul{
+    margin-top: 15px;
 }

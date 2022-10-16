@@ -1,0 +1,25 @@
+li {
+    border-color: rgb(193, 177, 177);
+    background-color: #554B41;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom-width: .5px;
+    border-color: #F3E600;
+    color: white;
+}
+
+.col-lg-2 {
+    display: flex;
+    justify-content: flex-end;
+}
+
+li button {
+    background-color: rgb(217, 208, 208);
+    border-radius: 150px;
+    transition: 400ms;
+}
+
+.btn.add:hover {
+    background-color: #08FF08;
+}
