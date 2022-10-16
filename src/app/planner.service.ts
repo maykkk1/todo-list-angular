@@ -42,6 +42,16 @@ export class PlannerService {
         currentDayTaskList.splice(index, 1)
     }
 
+    resetData() {
+        this.segunda = []
+        this.terca = []
+        this.quarta = []
+        this.quinta = []
+        this.sexta = []
+        this.sabado = []
+        this.domingo = []
+    }
+
     saveData() {
         const week = [];
         week.push(this.segunda)
@@ -52,5 +62,6 @@ export class PlannerService {
         week.push(this.sabado)
         week.push(this.domingo)
         localStorage.setItem('dailyTasks', JSON.stringify(week))
+        this.resetData()
     }
 }
