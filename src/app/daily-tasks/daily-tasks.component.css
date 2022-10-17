@@ -13,6 +13,7 @@ span {
     font-size: 18px;
     color: white;
     border-bottom: 1px solid #F3E600;
+    text-transform: capitalize;
 }
 
 ul{

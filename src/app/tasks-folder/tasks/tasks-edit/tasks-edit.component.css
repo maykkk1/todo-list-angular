@@ -27,6 +27,7 @@ button {
 
 button:hover{
     color: black;
+    background-color: #bb6712;
 }
 
 .btn.sair {

@@ -8,7 +8,7 @@ import { TasksService } from './tasks.service';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit{
-  title = 'todo-list';
+  title = 'Planejador';
   constructor(private route: Router, private tasksService: TasksService) {}
 
   ngOnInit(): void {
