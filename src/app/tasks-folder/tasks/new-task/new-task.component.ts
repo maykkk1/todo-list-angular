@@ -20,7 +20,7 @@ export class NewTaskComponent implements OnInit {
 
   onCreateTask() {
     const name = this.taskName.nativeElement.value
-    const priority = this.taskPrioridade.nativeElement.value
+    const priority = +this.taskPrioridade.nativeElement.value
    if(name.length === 0) return this.emptyNameError = true;
     this.tasksService.addTarefa(name, priority)
     this.emptyNameError = false

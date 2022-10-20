@@ -1,4 +1,5 @@
 import { Component, ElementRef, EventEmitter, Input, OnInit, Output, ViewChild } from '@angular/core';
+import { Subscription } from 'rxjs';
 import { Tarefa } from 'src/app/shared/Tarefa.model';
 import { TasksService } from 'src/app/tasks.service';
 
@@ -16,7 +17,9 @@ export class TasksEditComponent implements OnInit {
 
   constructor(private tasksService: TasksService) { }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+
+  }
 
   onEditTask() {
     const newName = this.inputName.nativeElement.value;

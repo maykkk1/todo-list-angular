@@ -30,7 +30,7 @@ export class PlannerService {
     }
 
     addTask(day: string, name: string) {
-        const task = new Tarefa(this.currentIdCounter, name, 'sem')
+        const task = new Tarefa(this.currentIdCounter, name, 5)
         this.currentIdCounter++
         const currentDay = this.getCurrentDay(day)
         currentDay.push(task)

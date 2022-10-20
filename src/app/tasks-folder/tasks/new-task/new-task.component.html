@@ -12,9 +12,9 @@
                 <small *ngIf="emptyNameError" id="emailHelp" class="form-text text-muted"> Digite o nome da tarefa. </small><br>
                 <label for="tarefaPrioridade"> Prioridade </label>
                 <select #tarefaPrioridade style="padding-right: 10px;" class="form-control" id="tarefaPrioridade">
-                    <option value="baixa"> Baixa </option>
-                    <option value="media"> Média </option>
-                    <option value="alta"> Alta </option>
+                    <option value="0"> Baixa </option>
+                    <option value="1"> Média </option>
+                    <option value="2"> Alta </option>
                   </select>
                   <div style="margin-top: 40px;">
                     <button  mat-raised-button type="button" class="btn btn-success" (click)="onCreateTask()"> Criar nova tarefa </button>

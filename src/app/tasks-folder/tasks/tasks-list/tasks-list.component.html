@@ -1,6 +1,22 @@
 <div class="row" style="margin-bottom: 13px;">
-    <div class="col-md-12">
+    <div class="col-md-12" style="display: flex; align-items: center;">
         <button class="btn btn-primary" (click)="createTask()">Nova tarefa</button>
+        <div style="display: flex; align-items: center;">
+            <label for="order" style="color: white; margin-left: 10px;">Ordernar por: </label>
+            <select 
+            #select
+            style="width: 250px; margin-left: 10px;" 
+            class="form-control" 
+            id="order"
+            (change)="changeOrder()"
+            [value]="filterState"
+            >
+                <option value="maisNova">Data de criação(Mais recente)</option>
+                <option value="maisAntiga">Data de criação(Mais antigo)</option>
+                <option value="maiorPrioridade">Maior prioridade</option>
+                <option value="menorPrioridade">Menor prioridade</option>
+            </select>
+        </div>
     </div>
 </div>
 <div class="row">

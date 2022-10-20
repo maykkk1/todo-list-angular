@@ -1,6 +1,8 @@
+import { Subject } from "rxjs";
 import { Tarefa } from "./shared/Tarefa.model";
 
 export class TasksService {
+    public filtro: string = 'maisNova';
     public currentIdCounter: number[] = [];
     private tarefas: Tarefa[] =  []
 
@@ -19,15 +21,26 @@ export class TasksService {
         }
     }
 
-    getTarefas() {
-        return this.tarefas;
+    getOrderedTasks(type: string) {
+        this.filtro = type
+        if(type == 'maisNova') {
+            return this.tarefas.sort((a, b) => b.id > a.id ? 1 :(a.id > b.id)? -1: 0)
+        }
+        else if (type === 'maisAntiga') {
+            return this.tarefas.sort((a, b) => a.id > b.id ? 1 :(b.id > a.id)? -1: 0)
+        } else if (type === 'menorPrioridade') {
+            return this.tarefas.sort((a, b) => a.priority > b.priority ? 1 :(b.priority > a.priority)? -1: 0)
+        } else if (type === 'maiorPrioridade') {
+            return this.tarefas.sort((a, b) => b.priority > a.priority ? 1 :(a.priority > b.priority)? -1: 0)
+        }
+        return this.tarefas
     }
 
     getTarefasCompletas() {
         return this.tarefasCompletas
     }
 
-    addTarefa(name: string, priority: string) {
+    addTarefa(name: string, priority: number) {
         const newTask = new Tarefa(this.currentIdCounter.length, name, priority)
         this.tarefas.push(newTask)
         this.currentIdCounter.push(0)
@@ -45,7 +58,7 @@ export class TasksService {
         return this.tarefas[index]
     }
 
-    editTaskBy(id: number, newName: string, newPriority: 'string') {
+    editTaskBy(id: number, newName: string, newPriority: number) {
         const task = this.getTaskById(id)
         task.name = newName
         task.priority = newPriority
