@@ -1,0 +1,24 @@
+<li class="list-group-item" style="margin-top: 10px;">
+    <div class="row">
+        <div class="col-lg-8">
+            <p> {{ taskData.name }} </p>
+        </div>
+        <div 
+        class="col-lg-4"
+        >
+            <div class="row" align="right" style="padding-right: 10px;">
+                <button 
+                class="btn edit"
+                >
+                    <img src="../../../../assets/images/icons/edit-icon.png" width="15px">
+                </button>
+                <button 
+                class="btn delete"
+                (click)="onDelete()"
+                >
+                    <img src="../../../../assets/images/icons/delete-icon.png" width="15px">
+                </button>
+            </div>
+        </div>
+    </div>
+</li>

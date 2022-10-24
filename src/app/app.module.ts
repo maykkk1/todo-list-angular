@@ -19,6 +19,8 @@ import { DailyTasksListItemComponent } from './daily-tasks/planner/daily-tasks-l
 import { PlannerService } from './planner.service';
 import { DailyTasksService } from './daily-tasks.service';
 import { DailyTaskComponent } from './daily-tasks/daily-task/daily-task.component';
+import { PlannerEditComponent } from './daily-tasks/planner/planner-edit/planner-edit.component';
+import { PlannerEditItemComponent } from './daily-tasks/planner/planner-edit/planner-edit-item/planner-edit-item.component';
 
 
 
@@ -38,6 +40,8 @@ import { DailyTaskComponent } from './daily-tasks/daily-task/daily-task.componen
     DailyTasksListComponent,
     DailyTasksListItemComponent,
     DailyTaskComponent,
+    PlannerEditComponent,
+    PlannerEditItemComponent,
   ],
   imports: [
     BrowserModule,

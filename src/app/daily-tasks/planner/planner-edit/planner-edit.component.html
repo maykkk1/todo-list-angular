@@ -1,0 +1,25 @@
+<div class="col-md-12">
+    <h3> Planejamento atual </h3>
+    <form>
+        <div class="form-group">
+            <label for="task"> Tarefa </label>
+            <input type="text" class="form-control">
+        </div>
+    </form>
+    <select #currentDay (change)="changeDay()" class="form-control">
+        <option value="segunda"> Segunda </option>
+        <option value="terca"> Terça </option>
+        <option value="quarta"> Quarta </option>
+        <option value="quinta"> Quinta </option>
+        <option value="sexta"> Sexta </option>
+        <option value="sabado"> Sábado </option>
+        <option value="domingo"> Domingo </option>
+    </select>
+    <ul class="list-group">
+        <app-planner-edit-item
+        *ngFor="let task of selectedDay"
+        [taskData]="task"
+        [taskDay]="currentDay.value"
+        ></app-planner-edit-item>
+    </ul>
+</div>

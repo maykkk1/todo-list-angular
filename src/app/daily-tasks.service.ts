@@ -61,4 +61,11 @@ export class DailyTasksService {
         this.updateData()
     }
 
+    deleteTask(id: number, day: string) {
+        const today = this.getCurrentDay(day)
+        const index = today.findIndex(task => task.id === id)
+        today.splice(index, 1)
+        this.updateData()
+    }
+
 }

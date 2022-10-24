@@ -1,0 +1,35 @@
+li {
+    border-color: rgb(193, 177, 177);
+    background-color: #554B41;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom-width: .5px;
+    border-color: #04DAF6;
+    color: white;
+}
+
+li button {
+    background-color: rgb(217, 208, 208);
+    border-radius: 150px;
+    transition: 400ms;
+    margin-left: 5px;
+}
+
+.btn.add:hover {
+    background-color: #08FF08;
+}
+
+.btn.delete:hover {
+    background-color: #D2042D;
+}
+
+.btn.edit:hover {
+    background-color: #ff901f;
+}
+
+.col-lg-8 p {
+    color: rgb(205, 195, 195);
+    overflow-wrap: break-word;
+    font-size: 15px;
+}
