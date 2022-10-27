@@ -12,6 +12,6 @@ export class AppComponent implements OnInit{
   constructor(private route: Router, private tasksService: TasksService) {}
 
   ngOnInit(): void {
-    // this.tasksService.initLocalstorageData()
+    this.tasksService.initLocalstorageData()
   }
 }
