@@ -4,7 +4,11 @@ import { Tarefa } from "./shared/Tarefa.model";
 export class TasksService {
     public filtro: string = 'maisNova';
     public currentIdCounter: number[] = [];
-    private tarefas: Tarefa[] =  []
+    private tarefas: Tarefa[] =  [
+        new Tarefa(1, 'teste', 0),
+        new Tarefa(2, 'teste2', 0),
+        new Tarefa(3, 'teste3', 0)
+    ]
 
     private tarefasCompletas: Tarefa[] = []
 

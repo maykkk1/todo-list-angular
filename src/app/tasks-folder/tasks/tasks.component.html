@@ -1,18 +1,5 @@
 <div class="row">
     <div class="col-md-12">
-        <app-tasks-list 
-        *ngIf="isTasksListVisible"
-        (onCreateTask)="showNewTaskScreen()"
-        (taskToEdit)="taskToEdit($event)"
-        ></app-tasks-list>
-        <app-new-task 
-        *ngIf="isNewTasksVisible"
-        (leaveThisScreen)="hiddeNewTaskScreen()"
-        ></app-new-task>
-        <app-tasks-edit 
-        *ngIf="isEditTaskVisible"
-        [selectedTask]="taskToEditData"
-        (leaveThisScreen)="hiddeEditTaskScreen()"
-        ></app-tasks-edit>
+        <router-outlet></router-outlet>
     </div>
 </div>

@@ -3,6 +3,8 @@ import { RouterModule, Routes } from '@angular/router';
 import { CompletedTasksComponent } from './completed-tasks-folder/completed-tasks/completed-tasks.component';
 import { PlannerComponent } from './daily-tasks/planner/planner.component';
 import { HomeComponent } from './home/home.component';
+import { TasksEditComponent } from './tasks-folder/tasks/tasks-edit/tasks-edit.component';
+import { TasksListComponent } from './tasks-folder/tasks/tasks-list/tasks-list.component';
 
 const appRouts: Routes = [
   { 
@@ -12,7 +14,11 @@ const appRouts: Routes = [
   {
     path: 'home',
     component: HomeComponent,
-    children: []
+    children: [
+      {path: '', component: TasksListComponent},
+      {path: 'edit', component: TasksEditComponent},
+      {path: 'edit/:id', component: TasksEditComponent},
+    ]
   }, 
   {
     path: 'tarefas-completas',

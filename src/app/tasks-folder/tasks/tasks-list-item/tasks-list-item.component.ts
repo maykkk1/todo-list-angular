@@ -9,10 +9,13 @@ import { TasksService } from 'src/app/tasks.service';
   styleUrls: ['./tasks-list-item.component.css']
 })
 export class TasksListItemComponent implements OnInit {
-  @Output() taskToEdit = new EventEmitter<Tarefa>();
   @Input() tarefaData: Tarefa;
 
-  constructor(private tasksService: TasksService) { }
+  constructor(
+            private tasksService: TasksService,
+            private router: Router,
+            private route: ActivatedRoute
+            ) { }
 
   ngOnInit(): void {
   }
@@ -22,7 +25,7 @@ export class TasksListItemComponent implements OnInit {
   }
 
   onEditTask() {
-    this.taskToEdit.emit(this.tarefaData)
+    this.router.navigate(['edit', this.tarefaData.id], {relativeTo: this.route})
   }
 
   OnCompleteTask() {

@@ -9,7 +9,6 @@ import { Tarefa } from 'src/app/shared/Tarefa.model';
 export class TasksComponent implements OnInit {
   taskToEditData: Tarefa;
   isTasksListVisible = true;
-  isNewTasksVisible = false;
   isEditTaskVisible = false;
 
   constructor() { }
@@ -17,14 +16,8 @@ export class TasksComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  showNewTaskScreen() {
-    this.isTasksListVisible = false;
-    this.isNewTasksVisible = true;
-  }
-
-  hiddeNewTaskScreen() {
-    this.isNewTasksVisible = false;
-    this.isTasksListVisible = true;
+  openTask() {
+    
   }
 
   taskToEdit(task: Tarefa) {
