@@ -6,19 +6,41 @@
             </div>
         </div>
         <div class="row">
-            <form class="form-group" style="padding: 0 30px;">
+            <form 
+                class="form-group" 
+                style="padding: 0 30px;"
+                [formGroup]="taskForm"
+                (ngSubmit)="onSubmit()"
+                >
                 <label for="tarefaNomeEdit"> Nome </label>
-                <input autocomplete="off" type="text" value="{{ selectedTask.name }}" #tarefaNomeEdit class="form-control" id="tarefaNome">
-                <small *ngIf="emptyNameError" id="emailHelp" class="form-text text-muted"> Digite o nome da tarefa. </small><br>
+                <input 
+                    autocomplete="off" 
+                    type="text" 
+                    class="form-control"
+                    formControlName="name"
+                >
+                <small *ngIf="!taskForm.get('name')?.valid && taskForm.get('name')?.touched" class="form-text text-muted"> Digite o nome da tarefa. </small><br>
                 <label for="tarefaPrioridade"> Prioridade </label>
-                <select #tarefaPrioridade [value]="selectedTask.priority" style="padding-right: 10px;" class="form-control" id="tarefaPrioridade">
+                <select 
+                    style="padding-right: 10px;" 
+                    class="form-control"
+                    formControlName="priority"
+                >
                     <option value=0> Baixa </option>
                     <option value=1> Média </option>
                     <option value=2> Alta </option>
                   </select>
                   <div style="margin-top: 40px;">
-                    <button  mat-raised-button type="button" class="btn btn-success" (click)="onSubmit()"> Salvar </button>
-                    <button  mat-raised-button type="button" class="btn sair"> Sair </button>
+                    <button 
+                        type="submit" 
+                        class="btn btn-success"
+                        [disabled]="!taskForm.valid"
+                        > Salvar </button>
+                    <button 
+                        type="button" 
+                        class="btn sair"
+                        (click)="onCancel()"
+                        > Sair </button>
                   </div>
             </form>
         </div>

@@ -18,7 +18,6 @@ export class TasksListComponent implements OnInit {
   ngOnInit(): void {
     this.tarefas = this.tasksService.getOrderedTasks(this.tasksService.filtro);
     this.filterState = this.tasksService.filtro
-    console.log(this.tarefas)
   }
 
 
